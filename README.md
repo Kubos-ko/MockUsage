@@ -4,7 +4,7 @@
 
 A native macOS dashboard, menu bar app and configurable desktop widget for usage limits in locally running **GPTMock** and **Claude Code** Docker containers.
 
-**Version 0.9.1, build 11.** macOS 14 or later. This is an independent local utility, not an official OpenAI or Anthropic app. It reads account usage rather than estimating it from token counts.
+**Version 0.9.1, build 14.** macOS 14 or later. This is an independent local utility, not an official OpenAI or Anthropic app. It reads account usage rather than estimating it from token counts.
 
 ## Features
 
@@ -60,7 +60,7 @@ bash scripts/build.sh
 bash scripts/package-release.sh
 ```
 
-The versioned ZIP and SHA-256 checksum appear in `dist/`; publish these as **GitHub Release assets**, rather than checking build products into source history. The GitHub Actions workflow runs synthetic tests, builds the app and uploads a local-build artifact. It does not publish a release or require provider credentials.
+The versioned ZIP and SHA-256 checksum appear in `dist/`; publish these as **GitHub Release assets**, rather than checking build products into source history. The validation workflow runs synthetic tests, builds the app and uploads a local-build artifact. A separate manually triggered workflow prepares a draft release for a version tag. Neither workflow requires provider credentials.
 
 If this repository has private development history, create a fresh public Git repository from the reviewed committed tree:
 
