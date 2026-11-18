@@ -1,0 +1,52 @@
+name: MockUsage
+options:
+  deploymentTarget:
+    macOS: "14.0"
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    CODE_SIGN_IDENTITY: "-"
+    CODE_SIGN_STYLE: Manual
+    CURRENT_PROJECT_VERSION: 12
+    MARKETING_VERSION: "0.8.1"
+    SWIFT_ACTIVE_COMPILATION_CONDITIONS: WIDGET_SUPPORT
+targets:
+  MockUsage:
+    type: application
+    platform: macOS
+    sources:
+      - path: Sources/UsageCore
+      - path: Sources/MockUsage
+        excludes: [Resources]
+      - path: Sources/MockUsage/Resources/collector.py
+        buildPhase: resources
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: local.mockusage.app
+        ENABLE_APP_SANDBOX: NO
+        ENABLE_HARDENED_RUNTIME: YES
+        CODE_SIGN_ENTITLEMENTS: Config/App.entitlements
+        INFOPLIST_FILE: Config/App-Info.plist
+    dependencies:
+      - target: MockUsageWidget
+        embed: true
+  MockUsageWidget:
+    type: app-extension
+    platform: macOS
+    sources:
+      - path: Sources/UsageCore
+      - path: Widget
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: local.mockusage.app.widget
+        SWIFT_ACTIVE_COMPILATION_CONDITIONS: WIDGET_EXTENSION
+        ENABLE_APP_SANDBOX: YES
+        ENABLE_HARDENED_RUNTIME: YES
+        CODE_SIGN_ENTITLEMENTS: Config/Widget.entitlements
+        INFOPLIST_FILE: Config/Widget-Info.plist
+        SKIP_INSTALL: YES
+schemes:
+  MockUsage:
+    build:
+      targets:
+        MockUsage: all

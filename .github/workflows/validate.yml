@@ -1,0 +1,25 @@
+name: Validate
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  tests:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Scan tracked files
+        run: python3 scripts/audit-public.py
+      - name: Synthetic collector tests
+        run: python3 -m unittest discover -s Tests -v
+      - name: Swift and offline integration tests
+        run: swift test
+      - name: Install build generator
+        run: brew install xcodegen
+      - name: Build app and widget
+        run: bash scripts/build.sh
+      - name: Package local release
+        run: bash scripts/package-release.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: MockUsage-local-build
+          path: dist/

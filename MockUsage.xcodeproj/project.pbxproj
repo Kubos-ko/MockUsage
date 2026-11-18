@@ -1,0 +1,498 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		094E38A9F564C4F5A70749D5 /* MockUsageWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C485E4EF12B571EC9EBEF1 /* MockUsageWidget.swift */; };
+		19939BA5081BEEC9E041A9E6 /* MockUsageApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E8D91B1C9889107D4242A4 /* MockUsageApp.swift */; };
+		226CB9359C278959EB7D5988 /* Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1931D4EE0CF569AB6F75D52F /* Views.swift */; };
+		245BA266F8654DBD441EB04D /* MenuBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498F4EA4AF8717BC1039088E /* MenuBarController.swift */; };
+		3DAAA1C8607D28F9B8E95A25 /* MockUsageWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 7FB6C25566B6011B8E197CEE /* MockUsageWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4F54E4C7B1395E809113453A /* UsageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A89B97BDD26EF36D8ABFD7 /* UsageStore.swift */; };
+		508B6A25513AF3B24AB81403 /* DisplaySelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FEA20A28F1EDDE0327A77CA /* DisplaySelection.swift */; };
+		7F4901F3728A1C926D8534E7 /* WidgetSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E43FB974BFBE491AE9DC5A /* WidgetSnapshot.swift */; };
+		82D3EBC710EAA61C11DEEAF9 /* WidgetSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E43FB974BFBE491AE9DC5A /* WidgetSnapshot.swift */; };
+		8A16CA75954102A4E6631E69 /* collector.py in Resources */ = {isa = PBXBuildFile; fileRef = 615C36D0D65D919FD671F3BE /* collector.py */; };
+		98D6162B328A3BD032452FE3 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A28D2D8D687E990526FF16A /* Models.swift */; };
+		A6CE40688DB183E1758A0B81 /* DisplaySelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FEA20A28F1EDDE0327A77CA /* DisplaySelection.swift */; };
+		A8DB7E387B5DA4D30C1702CA /* DockerBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E7A5FBC84EEBC6D3BFE50C /* DockerBridge.swift */; };
+		A99D24F8B6F0D1D2F75FB898 /* UsageConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6331D11218638BE54B199903 /* UsageConfiguration.swift */; };
+		ABF6280D228388B34DDEBE80 /* Typography.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AE122EDAC727939D434EEA /* Typography.swift */; };
+		FA224763D6E722358AEBF1B7 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A28D2D8D687E990526FF16A /* Models.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0CA4E12D1E3C7E8B4D5C48F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 296FC0FD292B4E22CA6F84D5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EB3F710943F953B19C31FC59;
+			remoteInfo = MockUsageWidget;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6BA85E58391203036113E5E7 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				3DAAA1C8607D28F9B8E95A25 /* MockUsageWidget.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1931D4EE0CF569AB6F75D52F /* Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views.swift; sourceTree = "<group>"; };
+		27C485E4EF12B571EC9EBEF1 /* MockUsageWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUsageWidget.swift; sourceTree = "<group>"; };
+		29A89B97BDD26EF36D8ABFD7 /* UsageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageStore.swift; sourceTree = "<group>"; };
+		29E43FB974BFBE491AE9DC5A /* WidgetSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetSnapshot.swift; sourceTree = "<group>"; };
+		498F4EA4AF8717BC1039088E /* MenuBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarController.swift; sourceTree = "<group>"; };
+		4DDCD91526988E37A113EA7F /* MockUsage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MockUsage.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		615C36D0D65D919FD671F3BE /* collector.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = collector.py; sourceTree = "<group>"; };
+		6331D11218638BE54B199903 /* UsageConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageConfiguration.swift; sourceTree = "<group>"; };
+		7FB6C25566B6011B8E197CEE /* MockUsageWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MockUsageWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FEA20A28F1EDDE0327A77CA /* DisplaySelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplaySelection.swift; sourceTree = "<group>"; };
+		9A28D2D8D687E990526FF16A /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		A2AE122EDAC727939D434EEA /* Typography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typography.swift; sourceTree = "<group>"; };
+		B7E8D91B1C9889107D4242A4 /* MockUsageApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUsageApp.swift; sourceTree = "<group>"; };
+		C6E7A5FBC84EEBC6D3BFE50C /* DockerBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockerBridge.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		40D3C6893A733167EA941CBB /* UsageCore */ = {
+			isa = PBXGroup;
+			children = (
+				8FEA20A28F1EDDE0327A77CA /* DisplaySelection.swift */,
+				9A28D2D8D687E990526FF16A /* Models.swift */,
+				29E43FB974BFBE491AE9DC5A /* WidgetSnapshot.swift */,
+			);
+			name = UsageCore;
+			path = Sources/UsageCore;
+			sourceTree = "<group>";
+		};
+		738C944078EBCBD249F3BB8C /* Widget */ = {
+			isa = PBXGroup;
+			children = (
+				27C485E4EF12B571EC9EBEF1 /* MockUsageWidget.swift */,
+				6331D11218638BE54B199903 /* UsageConfiguration.swift */,
+			);
+			path = Widget;
+			sourceTree = "<group>";
+		};
+		BFEEFFC60D5A5840C4D67B3F = {
+			isa = PBXGroup;
+			children = (
+				FCCE988395D830A222D93142 /* MockUsage */,
+				C19496232B0815C138FC6B79 /* Resources */,
+				40D3C6893A733167EA941CBB /* UsageCore */,
+				738C944078EBCBD249F3BB8C /* Widget */,
+				E52A0828DD0AC37335C67F5E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C19496232B0815C138FC6B79 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				615C36D0D65D919FD671F3BE /* collector.py */,
+			);
+			name = Resources;
+			path = Sources/MockUsage/Resources;
+			sourceTree = "<group>";
+		};
+		E52A0828DD0AC37335C67F5E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4DDCD91526988E37A113EA7F /* MockUsage.app */,
+				7FB6C25566B6011B8E197CEE /* MockUsageWidget.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FCCE988395D830A222D93142 /* MockUsage */ = {
+			isa = PBXGroup;
+			children = (
+				C6E7A5FBC84EEBC6D3BFE50C /* DockerBridge.swift */,
+				498F4EA4AF8717BC1039088E /* MenuBarController.swift */,
+				B7E8D91B1C9889107D4242A4 /* MockUsageApp.swift */,
+				A2AE122EDAC727939D434EEA /* Typography.swift */,
+				29A89B97BDD26EF36D8ABFD7 /* UsageStore.swift */,
+				1931D4EE0CF569AB6F75D52F /* Views.swift */,
+			);
+			name = MockUsage;
+			path = Sources/MockUsage;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		227AA7F801F5857A46C0CB1E /* MockUsage */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9C58FF5E7B31684B1BC28D6C /* Build configuration list for PBXNativeTarget "MockUsage" */;
+			buildPhases = (
+				78E276829FEBEA683B6B2332 /* Sources */,
+				02E5886B79433CDA36EFB89D /* Resources */,
+				6BA85E58391203036113E5E7 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				218E6C802171AEE628C023DB /* PBXTargetDependency */,
+			);
+			name = MockUsage;
+			packageProductDependencies = (
+			);
+			productName = MockUsage;
+			productReference = 4DDCD91526988E37A113EA7F /* MockUsage.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EB3F710943F953B19C31FC59 /* MockUsageWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE80563C77AFAF5D63ED34CD /* Build configuration list for PBXNativeTarget "MockUsageWidget" */;
+			buildPhases = (
+				17A9899569CD850D7D1535C4 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MockUsageWidget;
+			packageProductDependencies = (
+			);
+			productName = MockUsageWidget;
+			productReference = 7FB6C25566B6011B8E197CEE /* MockUsageWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		296FC0FD292B4E22CA6F84D5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					227AA7F801F5857A46C0CB1E = {
+						ProvisioningStyle = Manual;
+					};
+					EB3F710943F953B19C31FC59 = {
+						ProvisioningStyle = Manual;
+					};
+				};
+			};
+			buildConfigurationList = 4F7AD8BF1A3815795B403447 /* Build configuration list for PBXProject "MockUsage" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = BFEEFFC60D5A5840C4D67B3F;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = E52A0828DD0AC37335C67F5E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				227AA7F801F5857A46C0CB1E /* MockUsage */,
+				EB3F710943F953B19C31FC59 /* MockUsageWidget */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		02E5886B79433CDA36EFB89D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A16CA75954102A4E6631E69 /* collector.py in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		17A9899569CD850D7D1535C4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				508B6A25513AF3B24AB81403 /* DisplaySelection.swift in Sources */,
+				094E38A9F564C4F5A70749D5 /* MockUsageWidget.swift in Sources */,
+				FA224763D6E722358AEBF1B7 /* Models.swift in Sources */,
+				A99D24F8B6F0D1D2F75FB898 /* UsageConfiguration.swift in Sources */,
+				82D3EBC710EAA61C11DEEAF9 /* WidgetSnapshot.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78E276829FEBEA683B6B2332 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6CE40688DB183E1758A0B81 /* DisplaySelection.swift in Sources */,
+				A8DB7E387B5DA4D30C1702CA /* DockerBridge.swift in Sources */,
+				245BA266F8654DBD441EB04D /* MenuBarController.swift in Sources */,
+				19939BA5081BEEC9E041A9E6 /* MockUsageApp.swift in Sources */,
+				98D6162B328A3BD032452FE3 /* Models.swift in Sources */,
+				ABF6280D228388B34DDEBE80 /* Typography.swift in Sources */,
+				4F54E4C7B1395E809113453A /* UsageStore.swift in Sources */,
+				226CB9359C278959EB7D5988 /* Views.swift in Sources */,
+				7F4901F3728A1C926D8534E7 /* WidgetSnapshot.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		218E6C802171AEE628C023DB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EB3F710943F953B19C31FC59 /* MockUsageWidget */;
+			targetProxy = 0CA4E12D1E3C7E8B4D5C48F2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		57FB12835625C2D4CA34EA56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Config/Widget.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = "Config/Widget-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = local.mockusage.app.widget;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = WIDGET_EXTENSION;
+			};
+			name = Release;
+		};
+		5AAF900245A00127D9F13333 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 12;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 0.8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = WIDGET_SUPPORT;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		5CAF32F0EAE2D3DD27970F4C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Config/Widget.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = "Config/Widget-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = local.mockusage.app.widget;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = WIDGET_EXTENSION;
+			};
+			name = Debug;
+		};
+		6546DF88A344116C3111C3E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Config/App.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_APP_SANDBOX = NO;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = "Config/App-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = local.mockusage.app;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		A501EE7D9523BAC6E4BA27C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 12;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 0.8.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = WIDGET_SUPPORT;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		C814838208AC4B9C91B11B03 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Config/App.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_APP_SANDBOX = NO;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = "Config/App-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = local.mockusage.app;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4F7AD8BF1A3815795B403447 /* Build configuration list for PBXProject "MockUsage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A501EE7D9523BAC6E4BA27C3 /* Debug */,
+				5AAF900245A00127D9F13333 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		9C58FF5E7B31684B1BC28D6C /* Build configuration list for PBXNativeTarget "MockUsage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6546DF88A344116C3111C3E0 /* Debug */,
+				C814838208AC4B9C91B11B03 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		FE80563C77AFAF5D63ED34CD /* Build configuration list for PBXNativeTarget "MockUsageWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5CAF32F0EAE2D3DD27970F4C /* Debug */,
+				57FB12835625C2D4CA34EA56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 296FC0FD292B4E22CA6F84D5 /* Project object */;
+}
