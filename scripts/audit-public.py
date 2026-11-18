@@ -35,7 +35,7 @@ def main():
             result.append("private-term")
         for email in re.findall(rb"[A-Za-z0-9._%+\[\]-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}", data):
             # Exact public automation identities are allowed only in commit metadata.
-            service_emails = {b"noreply" + b"@github.com", b"49699333+dependabot[bot]" + b"@users.noreply.github.com"}
+            service_emails = {b"noreply" + b"@github.com", b"support" + b"@github.com", b"49699333+dependabot[bot]" + b"@users.noreply.github.com"}
             if commit_metadata and email.lower() in service_emails:
                 continue
             domain = email.rsplit(b"@", 1)[1].lower()

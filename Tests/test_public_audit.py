@@ -47,7 +47,7 @@ class PublicAuditTests(unittest.TestCase):
             git("init")
             git("config", "user.name", "GitHub")
             git("config", "user.email", "noreply" + "@github.com")
-            git("commit", "--allow-empty", "-m", "Synthetic bot commit")
+            git("commit", "--allow-empty", "-m", "Synthetic bot commit\n\nSigned-off-by: dependabot[bot] <" + "support" + "@github.com>")
             command = [sys.executable, str(AUDIT), "--history"]
             result = subprocess.run(command, cwd=directory, capture_output=True, text=True)
             self.assertEqual(result.returncode, 0, result.stdout)
