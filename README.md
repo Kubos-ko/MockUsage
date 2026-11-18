@@ -100,5 +100,6 @@ The following native UI previews use synthetic accounts and invented usage. See 
 ![Small widget](docs/images/widget-small.png)
 ![Medium widget](docs/images/widget-medium.png)
 ![Large widget](docs/images/widget-large.png)
+![Large widget in light appearance](docs/images/widget-large-light.png)
 
 ![Settings](docs/images/settings.png)
