@@ -40,7 +40,7 @@ project.yml is the version source of truth for host and widget. Increase patch f
 
 `build.sh` compiles the host and extension, stages outside cloud-synced directories, strips extended attributes, ad-hoc signs both bundles, verifies signatures and creates build/MockUsage.zip. `install.sh` installs the bundle in user Applications and refreshes the extension process after upgrades.
 
-`package-release.sh` creates a versioned native-architecture ZIP and checksum in dist. It does not claim universal architecture or notarization. Publish binaries as GitHub Release assets; source Git history stays small and reviewable. A public distributor may replace ad-hoc signing with its own Developer ID/notarization workflow; signing credentials must be CI secrets, never repository files.
+`package-release.sh` creates a versioned universal ZIP and checksum in dist for the default build. It does not claim notarization. Publish binaries as GitHub Release assets; source Git history stays small and reviewable. A public distributor may replace ad-hoc signing with its own Developer ID/notarization workflow; signing credentials must be CI secrets, never repository files.
 
 ## GitHub preparation
 
