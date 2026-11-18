@@ -9,7 +9,7 @@ The published code and PNG previews use synthetic data. Private runtime files an
 ## Workflows
 
 - **Validate:** audits tracked content and history, runs offline Python/Swift tests, builds the host and widget, scans the signed bundle, and uploads an installable ZIP plus SHA-256 checksum for seven days.
-- **CodeQL:** scans Python and Swift on pushes and pull requests to main, and weekly. Swift uses macOS 15/Xcode 16.4 because CodeQL traced builds do not support macOS/Xcode 27. This toolchain selection is separate from the minimum supported macOS version of the app.
+- **CodeQL:** scans Python and Swift on pushes and pull requests to main, and weekly. Swift uses the standard Intel macOS 15 runner with Xcode 16.4 because CodeQL traced builds do not support macOS/Xcode 27. This toolchain selection is separate from the minimum supported macOS version of the app.
 - **Dependabot:** opens weekly update pull requests for pinned GitHub Actions.
 - **Draft release:** manually dispatch with an existing version tag (for example `v0.9.1`). It verifies the version, audits, tests, builds and creates a draft GitHub Release. Review the draft before publishing it. It never enables automatic updates on users' Macs.
 
