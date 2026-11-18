@@ -55,3 +55,11 @@ Use Settings for light/dark/system mode and native text zoom. Command +, Command
 - Widget not in gallery: launch the installed packaged app once, refresh a source and reopen the gallery. Swift Package builds do not include the extension.
 - Model missing: run Check models now in Sources; inspect account versus container support.
 - New runtime: use read-only monitoring until its adapter is validated. Version labels do not guarantee private APIs never change.
+
+## Upgrading widget choices from 0.8.x
+
+Version 0.9.0 replaces entity-backed widget parameters with labeled scalar IDs. After upgrading, open Edit Widget and select accounts once again. Automatic selection is used until configured. The "Automatic / not selected" item clears a slot; if all visible slots are empty, the widget uses automatic selection. Explicit missing accounts never silently switch to another account.
+
+A dot after a menu-bar percentage means the last refresh failed or the reading is older than 15 minutes. The number is a last-known reading; a successful refresh clears the dot.
+
+Widget backgrounds adapt to light and dark appearance. macOS may mute or tint them according to desktop widget settings.

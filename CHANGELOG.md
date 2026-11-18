@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.9.0 (build 13)
+
+- Store widget selections as stable scalar IDs with labeled dynamic choices, avoiding unresolved AppEntity references in local installations.
+- Register widget configuration in the host and extension; previous entity-based choices need one-time reselection.
+- Add an original macOS application icon and adaptive widget background gradients.
+- Explain stale-reading dots in the menu bar tooltip.
+
+
 ## 0.8.1 (build 12)
 
 - Strip developer paths from release binaries before signing and audit app bundles.

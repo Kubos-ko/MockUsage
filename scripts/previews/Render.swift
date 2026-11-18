@@ -36,6 +36,9 @@ struct PreviewExport {
             let view = UsageWidgetView(family: family, entry: UsageEntry(date: .now, accounts: Array(accounts.prefix(count))))
                 .padding(16)
             try render(view, size: size, name: name, output: output)
+            if family == .systemLarge {
+                try render(view, size: size, name: "widget-large-light", output: output, scheme: .light)
+            }
         }
         let menu = HStack(spacing: 6) {
             Image(nsImage: previewMeters([(42, .systemMint), (67, .systemOrange), (23, .systemOrange)]))
@@ -44,8 +47,9 @@ struct PreviewExport {
         try render(menu, size: .init(width: 280, height: 48), name: "menu-bar", output: output)
     }
 
-    @MainActor static func render<V: View>(_ view: V, size: NSSize, name: String, output: URL) throws {
-        let host = NSHostingView(rootView: view.environment(\.colorScheme, .dark)
+    @MainActor static func render<V: View>(_ view: V, size: NSSize, name: String, output: URL, scheme: ColorScheme = .dark) throws {
+        NSApplication.shared.appearance = NSAppearance(named: scheme == .dark ? .darkAqua : .aqua)
+        let host = NSHostingView(rootView: view.environment(\.colorScheme, scheme)
             .frame(width: size.width, height: size.height).background(Color(nsColor: .windowBackgroundColor)))
         host.frame = NSRect(origin: .zero, size: size)
         host.layoutSubtreeIfNeeded()

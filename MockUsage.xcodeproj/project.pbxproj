@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		094E38A9F564C4F5A70749D5 /* MockUsageWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C485E4EF12B571EC9EBEF1 /* MockUsageWidget.swift */; };
 		19939BA5081BEEC9E041A9E6 /* MockUsageApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E8D91B1C9889107D4242A4 /* MockUsageApp.swift */; };
+		1B1C4442829096D0E5B39CD3 /* AppIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = AC34365EB479946B2A130D32 /* AppIcon.icns */; };
 		226CB9359C278959EB7D5988 /* Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1931D4EE0CF569AB6F75D52F /* Views.swift */; };
 		245BA266F8654DBD441EB04D /* MenuBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498F4EA4AF8717BC1039088E /* MenuBarController.swift */; };
 		3DAAA1C8607D28F9B8E95A25 /* MockUsageWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 7FB6C25566B6011B8E197CEE /* MockUsageWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -17,11 +18,13 @@
 		7F4901F3728A1C926D8534E7 /* WidgetSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E43FB974BFBE491AE9DC5A /* WidgetSnapshot.swift */; };
 		82D3EBC710EAA61C11DEEAF9 /* WidgetSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E43FB974BFBE491AE9DC5A /* WidgetSnapshot.swift */; };
 		8A16CA75954102A4E6631E69 /* collector.py in Resources */ = {isa = PBXBuildFile; fileRef = 615C36D0D65D919FD671F3BE /* collector.py */; };
+		8A275037A56DF001FCED62A4 /* AppIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = AC34365EB479946B2A130D32 /* AppIcon.icns */; };
 		98D6162B328A3BD032452FE3 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A28D2D8D687E990526FF16A /* Models.swift */; };
 		A6CE40688DB183E1758A0B81 /* DisplaySelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FEA20A28F1EDDE0327A77CA /* DisplaySelection.swift */; };
 		A8DB7E387B5DA4D30C1702CA /* DockerBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E7A5FBC84EEBC6D3BFE50C /* DockerBridge.swift */; };
 		A99D24F8B6F0D1D2F75FB898 /* UsageConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6331D11218638BE54B199903 /* UsageConfiguration.swift */; };
 		ABF6280D228388B34DDEBE80 /* Typography.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AE122EDAC727939D434EEA /* Typography.swift */; };
+		D5022390AB6AE00CFC8C26F4 /* UsageConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6331D11218638BE54B199903 /* UsageConfiguration.swift */; };
 		FA224763D6E722358AEBF1B7 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A28D2D8D687E990526FF16A /* Models.swift */; };
 /* End PBXBuildFile section */
 
@@ -62,11 +65,20 @@
 		8FEA20A28F1EDDE0327A77CA /* DisplaySelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplaySelection.swift; sourceTree = "<group>"; };
 		9A28D2D8D687E990526FF16A /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		A2AE122EDAC727939D434EEA /* Typography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typography.swift; sourceTree = "<group>"; };
+		AC34365EB479946B2A130D32 /* AppIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = AppIcon.icns; sourceTree = "<group>"; };
 		B7E8D91B1C9889107D4242A4 /* MockUsageApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUsageApp.swift; sourceTree = "<group>"; };
 		C6E7A5FBC84EEBC6D3BFE50C /* DockerBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockerBridge.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
+		14066DFE46FACAF5455D1A6B /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				AC34365EB479946B2A130D32 /* AppIcon.icns */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		40D3C6893A733167EA941CBB /* UsageCore */ = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +102,7 @@
 		BFEEFFC60D5A5840C4D67B3F = {
 			isa = PBXGroup;
 			children = (
+				14066DFE46FACAF5455D1A6B /* Assets */,
 				FCCE988395D830A222D93142 /* MockUsage */,
 				C19496232B0815C138FC6B79 /* Resources */,
 				40D3C6893A733167EA941CBB /* UsageCore */,
@@ -158,6 +171,7 @@
 			buildConfigurationList = FE80563C77AFAF5D63ED34CD /* Build configuration list for PBXNativeTarget "MockUsageWidget" */;
 			buildPhases = (
 				17A9899569CD850D7D1535C4 /* Sources */,
+				CD41E0CBA0051214113D662A /* Resources */,
 			);
 			buildRules = (
 			);
@@ -212,7 +226,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A275037A56DF001FCED62A4 /* AppIcon.icns in Resources */,
 				8A16CA75954102A4E6631E69 /* collector.py in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD41E0CBA0051214113D662A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B1C4442829096D0E5B39CD3 /* AppIcon.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,6 +264,7 @@
 				19939BA5081BEEC9E041A9E6 /* MockUsageApp.swift in Sources */,
 				98D6162B328A3BD032452FE3 /* Models.swift in Sources */,
 				ABF6280D228388B34DDEBE80 /* Typography.swift in Sources */,
+				D5022390AB6AE00CFC8C26F4 /* UsageConfiguration.swift in Sources */,
 				4F54E4C7B1395E809113453A /* UsageStore.swift in Sources */,
 				226CB9359C278959EB7D5988 /* Views.swift in Sources */,
 				7F4901F3728A1C926D8534E7 /* WidgetSnapshot.swift in Sources */,
@@ -314,7 +338,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 13;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -327,7 +351,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 0.8.1;
+				MARKETING_VERSION = 0.9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -413,7 +437,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 13;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -432,7 +456,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 0.8.1;
+				MARKETING_VERSION = 0.9.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;

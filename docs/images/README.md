@@ -14,3 +14,5 @@ python3 scripts/render-previews.py
 ```
 
 The renderer uses an empty temporary configuration, never starts polling, never calls a reset, and does not write the user's widget snapshot. Temporary source copies expose the initial tab and widget family for rendering; production source files are not changed.
+
+The application icon is original vector artwork rendered with AppKit. Rebuild it with `swift scripts/make-icon.swift build/AppIcon.iconset` and `iconutil -c icns build/AppIcon.iconset -o Assets/AppIcon.icns`.

@@ -1,8 +1,10 @@
 # Mock Usage
 
+<img src="docs/images/app-icon.png" width="128" alt="Mock Usage icon">
+
 A native macOS dashboard, menu bar app and configurable desktop widget for usage limits in locally running **GPTMock** and **Claude Code** Docker containers.
 
-**Version 0.8.1, build 11.** macOS 14 or later. This is an independent local utility, not an official OpenAI or Anthropic app. It reads account usage rather than estimating it from token counts.
+**Version 0.9.0, build 11.** macOS 14 or later. This is an independent local utility, not an official OpenAI or Anthropic app. It reads account usage rather than estimating it from token counts.
 
 ## Features
 

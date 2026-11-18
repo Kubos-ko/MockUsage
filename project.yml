@@ -7,15 +7,18 @@ settings:
     SWIFT_VERSION: "5.0"
     CODE_SIGN_IDENTITY: "-"
     CODE_SIGN_STYLE: Manual
-    CURRENT_PROJECT_VERSION: 12
-    MARKETING_VERSION: "0.8.1"
+    CURRENT_PROJECT_VERSION: 13
+    MARKETING_VERSION: "0.9.0"
     SWIFT_ACTIVE_COMPILATION_CONDITIONS: WIDGET_SUPPORT
 targets:
   MockUsage:
     type: application
     platform: macOS
     sources:
+      - path: Assets/AppIcon.icns
+        buildPhase: resources
       - path: Sources/UsageCore
+      - path: Widget/UsageConfiguration.swift
       - path: Sources/MockUsage
         excludes: [Resources]
       - path: Sources/MockUsage/Resources/collector.py
@@ -34,6 +37,8 @@ targets:
     type: app-extension
     platform: macOS
     sources:
+      - path: Assets/AppIcon.icns
+        buildPhase: resources
       - path: Sources/UsageCore
       - path: Widget
     settings:

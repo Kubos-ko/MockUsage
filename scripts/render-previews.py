@@ -20,7 +20,7 @@ with tempfile.TemporaryDirectory(prefix="mockusage-previews-") as staging:
     for name in ["MockUsageWidget.swift", "UsageConfiguration.swift"]:
         text = (root / "Widget" / name).read_text()
         if name == "MockUsageWidget.swift":
-            text = text.split("@main")[0].replace('.containerBackground(.background, for: .widget)', '')
+            text = text.split("@main")[0].replace('.containerBackground(for: .widget)', '.background')
             text = text.replace('@Environment(\\.widgetFamily) private var family', 'var family: WidgetFamily')
         target = stage / name
         target.write_text(text)

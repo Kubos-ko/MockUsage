@@ -13,7 +13,7 @@ struct UsageTimeline: AppIntentTimelineProvider {
     func snapshot(for configuration: UsageConfiguration, in context: Context) async -> UsageEntry {
         let limit = capacity(context.family)
         let accounts = configuration.accounts(limit: limit)
-        WidgetSnapshotFile.recordTimeline(capacity: limit, selectedSlots: [configuration.primary, configuration.second, configuration.third].compactMap { $0 }.count,
+        WidgetSnapshotFile.recordTimeline(capacity: limit, selectedSlots: [configuration.primaryAccountID, configuration.secondAccountID, configuration.thirdAccountID].compactMap { $0 }.count,
                                           accountCount: accounts.count)
         return UsageEntry(date: .now, accounts: accounts)
     }
@@ -31,6 +31,7 @@ struct UsageTimeline: AppIntentTimelineProvider {
 
 struct UsageWidgetView: View {
     @Environment(\.widgetFamily) private var family
+    @Environment(\.colorScheme) private var colorScheme
     var entry: UsageEntry
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
@@ -78,7 +79,12 @@ struct UsageWidgetView: View {
             }
             Spacer(minLength: 0)
         }
-        .containerBackground(.background, for: .widget)
+        .containerBackground(for: .widget) {
+            LinearGradient(colors: colorScheme == .dark
+                ? [Color(red: 0.08, green: 0.14, blue: 0.18), Color(red: 0.12, green: 0.13, blue: 0.17), Color(red: 0.19, green: 0.14, blue: 0.12)]
+                : [Color(red: 0.91, green: 0.98, blue: 0.97), Color(red: 0.96, green: 0.97, blue: 0.99), Color(red: 1.0, green: 0.95, blue: 0.90)],
+                startPoint: .topLeading, endPoint: .bottomTrailing)
+        }
         .widgetURL(URL(string: "mockusage://overview"))
     }
 }

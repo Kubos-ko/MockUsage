@@ -123,7 +123,7 @@ final class MenuBarController: NSObject, NSPopoverDelegate {
         } else {
             item.button?.image = NSImage(systemSymbolName: "chart.bar.xaxis", accessibilityDescription: "Mock Usage")
         }
-        item.button?.toolTip = accounts.map(\.name).joined(separator: " · ") + " — Mint: GPTMock; orange: Claude; gray: last known. Choose accounts in Settings."
+        item.button?.toolTip = accounts.map(\.name).joined(separator: " · ") + " — Mint: GPTMock; orange: Claude; gray or a dot after the percentage: last known reading (refresh failed or older than 15 minutes). Choose accounts in Settings."
         item.button?.setAccessibilityLabel("Mock Usage " + title)
         // Text is laid out at its actual point size, never scaled as a bitmap.
         popover.contentSize = NSSize(width: min(430 + max(0, store.configuration.zoom - 1) * 150, limit.width - 40),
