@@ -29,11 +29,15 @@ def main():
     parser.add_argument("--private-terms", type=pathlib.Path, help="Local-only newline-separated names to reject; never commit this file")
     args = parser.parse_args()
     private_terms = [line.strip().lower() for line in args.private_terms.read_bytes().splitlines() if line.strip()] if args.private_terms else []
-    def categories(data):
+    def categories(data, commit_metadata=False):
         result = [kind for kind, expression in PATTERNS.items() if re.search(expression, data)]
         if any(term in data.lower() for term in private_terms):
             result.append("private-term")
-        for email in re.findall(rb"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}", data):
+        for email in re.findall(rb"[A-Za-z0-9._%+\[\]-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}", data):
+            # Exact public automation identities are allowed only in commit metadata.
+            service_emails = {b"noreply" + b"@github.com", b"49699333+dependabot[bot]" + b"@users.noreply.github.com"}
+            if commit_metadata and email.lower() in service_emails:
+                continue
             domain = email.rsplit(b"@", 1)[1].lower()
             if domain not in {b"example.com", b"example.test", b"example.invalid"}:
                 result.append("non-example-email")
@@ -50,7 +54,7 @@ def main():
     entries = [(None, p) for p in git("ls-files", "-z").decode().split("\0") if p]
     if args.history:
         for oid in git("rev-list", "--all").decode().splitlines():
-            for kind in categories(git("cat-file", "commit", oid)):
+            for kind in categories(git("cat-file", "commit", oid), commit_metadata=True):
                 findings.append(("commit-metadata", oid[:12], kind))
         for row in git("rev-list", "--objects", "--all").decode().splitlines():
             oid, _, path = row.partition(" ")
