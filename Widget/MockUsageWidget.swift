@@ -13,8 +13,7 @@ struct UsageTimeline: AppIntentTimelineProvider {
     func snapshot(for configuration: UsageConfiguration, in context: Context) async -> UsageEntry {
         let limit = capacity(context.family)
         let accounts = configuration.accounts(limit: limit)
-        WidgetSnapshotFile.recordTimeline(capacity: limit, selectedSlots: [configuration.primaryAccountID, configuration.secondAccountID, configuration.thirdAccountID].compactMap { $0 }.count,
-                                          accountCount: accounts.count)
+        WidgetSnapshotFile.recordTimeline(capacity: limit, selection: [configuration.primaryAccountID, configuration.secondAccountID, configuration.thirdAccountID], accounts: accounts)
         return UsageEntry(date: .now, accounts: accounts)
     }
     func timeline(for configuration: UsageConfiguration, in context: Context) async -> Timeline<UsageEntry> {

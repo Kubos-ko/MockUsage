@@ -1,0 +1,48 @@
+name: Draft release
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Existing version tag, for example v0.9.1
+        required: true
+        type: string
+permissions:
+  contents: read
+jobs:
+  package:
+    runs-on: macos-15
+    timeout-minutes: 30
+    permissions:
+      contents: write
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_16.4.app/Contents/Developer
+      RELEASE_TAG: ${{ inputs.tag }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ inputs.tag }}
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Validate release tag
+        run: |
+          python3 - <<'PY'
+          import os, pathlib, re
+          version = re.search(r'MARKETING_VERSION: "([^"]+)"', pathlib.Path('project.yml').read_text()).group(1)
+          tag = os.environ['RELEASE_TAG']
+          assert re.fullmatch(r'v[0-9]+\.[0-9]+\.[0-9]+', tag)
+          assert tag == 'v' + version, 'The tag must match the application version'
+          PY
+      - name: Audit and test
+        run: |
+          python3 scripts/audit-public.py --history
+          python3 -m unittest discover -s Tests -v
+          swift test
+      - name: Build and package
+        run: |
+          brew install xcodegen
+          bash scripts/build.sh
+          bash scripts/package-release.sh
+      - name: Create draft release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "$RELEASE_TAG" dist/* --verify-tag --draft --title "Mock Usage $RELEASE_TAG" --notes "Universal macOS app. Ad-hoc signed; not Developer ID signed or notarized. See README for installation and container setup."

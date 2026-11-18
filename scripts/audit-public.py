@@ -15,7 +15,7 @@ PATTERNS = {
     "personal-home-path": rb"/Users/(?!Shared(?:/|\b)|example(?:/|\b))[A-Za-z0-9_.-]+/",
 }
 PRIVATE_NAMES = {".env", "auth.json", ".credentials.json", "configuration.json", "usage-cache.json",
-                 "model-catalogs.json", "widget-usage.json", "widget-read-receipt.json", "widget-timeline-receipt.json", "last-reset-diagnostic.json"}
+                 "model-catalogs.json", "widget-usage.json", "widget-read-receipt.json", "widget-timeline-receipt.json", "widget-timeline-history.json", "last-reset-diagnostic.json"}
 
 
 def git(*args):

@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.9.1 (build 14)
+
+- Add bounded, identity-free diagnostics for widget selection persistence and background refresh.
+- Add upstream container links and repository installation instructions.
+- Add pinned CodeQL, Dependabot and manually triggered draft-release workflows.
+
+
 ## 0.9.0 (build 13)
 
 - Store widget selections as stable scalar IDs with labeled dynamic choices, avoiding unresolved AppEntity references in local installations.

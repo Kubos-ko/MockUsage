@@ -7,9 +7,16 @@ Mock Usage connects with `docker --context <context> exec -i <container> python3
 | GPTMock | Python package `gptmock` 2026.9.29 and 2026.11.16 | `codex-wham-v1` | Python 3 with the GPTMock package importable and an authenticated GPTMock home |
 | Claude Code | CLI 2.1.325 | `claude-oauth-v1` | Python 3 plus `claude` on PATH, authenticated for the Docker exec user |
 
-Any locally built image satisfying this contract may work; there is no bundled or endorsed public Docker image. Tags such as `gptmock:local` are examples, not version detection. GPTMock's package metadata and `claude --version` are the source of truth. Image tags/digests are not substituted for runtime versions.
+Any locally built image satisfying this contract may work; this app does not bundle container images. Upstream distribution links are listed below. Tags such as `gptmock:local` are examples, not version detection. GPTMock's package metadata and `claude --version` are the source of truth. Image tags/digests are not substituted for runtime versions.
 
 Unknown versions use read-only fallback adapters with direct resets disabled. Explicitly incompatible versions can be listed as unsupported and are blocked before authentication. The app currently has no production version marked explicitly unsupported. Adding a new supported runtime requires a manual app release.
+
+## Where to obtain containers
+
+- **GPTMock source and Compose files:** [rapidrabbit76/GPTMock](https://github.com/rapidrabbit76/GPTMock). Its upstream Compose configuration references the published `rapidrabbit76/gptmock:latest` image. [Upstream Docker setup](https://github.com/rapidrabbit76/GPTMock#quick-start-docker-recommended) also describes building the checked-out source. This is a community project, not an OpenAI container image.
+- **Claude Code:** follow Anthropic's [development-container guide](https://code.claude.com/docs/en/devcontainer) and [reference configuration](https://github.com/anthropics/claude-code/tree/main/.devcontainer). The reference is an example to build, not a maintained base image. Ensure Python 3 is present for Mock Usage and complete the CLI login inside the container.
+
+Use the upstream installation/authentication instructions, then select the resulting running container in Sources. A `latest` image can change independently of this application's tested compatibility list. Check its actual runtime version before relying on direct reset support. No claim is made that every newer image tag has been tested.
 
 ## GPTMock
 

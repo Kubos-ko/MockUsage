@@ -4,7 +4,7 @@
 
 A native macOS dashboard, menu bar app and configurable desktop widget for usage limits in locally running **GPTMock** and **Claude Code** Docker containers.
 
-**Version 0.9.0, build 11.** macOS 14 or later. This is an independent local utility, not an official OpenAI or Anthropic app. It reads account usage rather than estimating it from token counts.
+**Version 0.9.1, build 11.** macOS 14 or later. This is an independent local utility, not an official OpenAI or Anthropic app. It reads account usage rather than estimating it from token counts.
 
 ## Features
 
@@ -70,6 +70,18 @@ bash scripts/export-public.sh
 
 The export is under `build/github/MockUsage-<version>`. It has a single clean initial commit, no remote, and no inherited development history. Configure your own remote and push only after reviewing that export. Nothing is automatically uploaded.
 
+## Get the source
+
+```sh
+git clone https://github.com/Kubos-ko/MockUsage.git
+cd MockUsage
+brew install xcodegen
+bash scripts/build.sh
+bash scripts/install.sh
+```
+
+Install full Xcode and Docker Desktop first. A source ZIP can be extracted to a local folder and built with the same commands, omitting `git clone`. Prefer a folder outside iCloud Drive for development. The app starts with no accounts: use Sources to add existing authenticated containers. See [container downloads and validated versions](docs/containers.md).
+
 ## Documentation
 
 - [User guide](docs/user-guide.md): sources, widgets, menu bar, usage, resets and troubleshooting.
@@ -77,6 +89,8 @@ The export is under `build/github/MockUsage-<version>`. It has a single clean in
 - [Architecture](docs/architecture.md): polling, adapters, storage, widget transport and reset safety.
 - [Development and release](docs/development.md): tests, version policy, packaging and deployment.
 - [Security](SECURITY.md): credentials, local data and public-source audit.
+- [GitHub workflows and security](docs/github.md).
+- [Widget restart and background verification](docs/widget-validation.md).
 - [Changelog](CHANGELOG.md).
 
 ## Limits

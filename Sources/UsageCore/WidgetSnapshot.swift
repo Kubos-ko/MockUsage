@@ -1,4 +1,5 @@
 import Foundation
+import CryptoKit
 
 public struct WidgetAccount: Codable, Identifiable {
     public var id: String
@@ -36,12 +37,37 @@ public enum WidgetSnapshotFile {
         #endif
         return accounts
     }
-    /// Diagnostic counters only: never record account IDs, names, or usage values.
-    public static func recordTimeline(capacity: Int, selectedSlots: Int, accountCount: Int) {
-        let path = url.deletingLastPathComponent().appendingPathComponent("widget-timeline-receipt.json")
+    private static let receiptLock = NSLock()
+
+    /// Bounded local diagnostics: hashes preserve selection/order comparisons without identities.
+    public static func recordTimeline(capacity: Int, selection: [String?], accounts: [WidgetAccount]) {
+        receiptLock.lock()
+        defer { receiptLock.unlock() }
+        let selected = selection.prefix(capacity).compactMap { $0 }.filter { $0 != "__automatic__" }
+        let encoded = (try? JSONEncoder().encode(selected)) ?? Data()
+        let digest = SHA256.hash(data: encoded).map { String(format: "%02x", $0) }.joined()
         let receipt: [String: Double] = ["readAt": Date().timeIntervalSince1970, "capacity": Double(capacity),
-                                      "selectedSlots": Double(selectedSlots), "accountCount": Double(accountCount)]
-        if let data = try? JSONSerialization.data(withJSONObject: receipt) { try? data.write(to: path, options: .atomic) }
+            "selectedSlots": Double(selected.count), "accountCount": Double(accounts.count),
+            "latestCapturedAt": accounts.map { $0.snapshot.capturedAt }.max() ?? 0,
+            "liveAccounts": Double(accounts.filter { $0.isLive }.count)]
+        let folder = url.deletingLastPathComponent()
+        let path = folder.appendingPathComponent("widget-timeline-history.json")
+        var history = (try? Data(contentsOf: path)).flatMap {
+            try? JSONDecoder().decode([String: [String: Double]].self, from: $0)
+        } ?? [:]
+        history["\(capacity):\(digest)"] = receipt
+        if history.count > 64 {
+            history = Dictionary(uniqueKeysWithValues: history.sorted {
+                ($0.value["readAt"] ?? 0) > ($1.value["readAt"] ?? 0)
+            }.prefix(64).map { ($0.key, $0.value) })
+        }
+        for (destination, value) in [(path, history as Any),
+            (folder.appendingPathComponent("widget-timeline-receipt.json"), receipt as Any)] {
+            if let data = try? JSONSerialization.data(withJSONObject: value) {
+                try? data.write(to: destination, options: .atomic)
+                try? FileManager.default.setAttributes([.posixPermissions: 0o600], ofItemAtPath: destination.path)
+            }
+        }
     }
     public static func write(_ accounts: [WidgetAccount]) throws {
         try FileManager.default.createDirectory(at: url.deletingLastPathComponent(), withIntermediateDirectories: true,
