@@ -9,6 +9,9 @@ on:
   workflow_dispatch:
 permissions:
   contents: read
+concurrency:
+  group: codeql-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   analyze:
     name: Analyze (${{ matrix.language }})
@@ -34,6 +37,9 @@ jobs:
       - name: Select supported Swift toolchain
         if: matrix.language == 'swift'
         run: echo 'DEVELOPER_DIR=/Applications/Xcode_16.4.app/Contents/Developer' >> "$GITHUB_ENV"
+      - name: Install build generator before tracing
+        if: matrix.language == 'swift'
+        run: brew install xcodegen
       - uses: github/codeql-action/init@5895b2c9be147bc7f1c75ce72c5cb577febb1907 # v4
         with:
           languages: ${{ matrix.language }}
@@ -41,7 +47,6 @@ jobs:
       - name: Build Swift app and widget for analysis
         if: matrix.language == 'swift'
         run: |
-          brew install xcodegen
           xcodegen generate
           xcodebuild -project MockUsage.xcodeproj -scheme MockUsage -configuration Debug -derivedDataPath build/CodeQL CODE_SIGNING_ALLOWED=NO build
       - uses: github/codeql-action/analyze@5895b2c9be147bc7f1c75ce72c5cb577febb1907 # v4
